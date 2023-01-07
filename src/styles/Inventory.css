@@ -1,0 +1,66 @@
+.heading {
+    font-size: calc(1rem + 2vw);
+    padding: 1vw;
+    margin: 0;
+}
+
+.inventory-frame {
+    background-color: #FFB480;
+    background-clip: padding-box;
+    text-align: center;
+    border: 3vw solid;
+    border-image: url('../assets/paper2.svg') 45 round;
+}
+
+.song-frame {
+    background-color: #FFB480;
+    background-clip: padding-box;
+    text-align: center;
+    border: 3vw solid;
+    border-image: url('../assets/paper2.svg') 45 round;
+
+    height: 65%;
+    display: grid;
+    grid-template-columns: 50% auto;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.inventory-button {
+    position: absolute;
+    top: 4vw;
+    right: 4vw;
+}
+
+.inventory-list {
+    margin: 0 4vw;
+    overflow-y: auto;
+    max-height: 55vh;
+}
+
+/* song */
+.song-container {
+    margin: 1vw 5vw 1vw 1vw;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 5vw 10vw auto 3vw 5vw;
+}
+
+.song-img {
+    width:6vw;
+    height: 6vw;
+    border: 4px solid;
+    border-image: url('../assets/songborder.svg') 2 round;
+}
+
+.song-img-large {
+    width:17vw;
+    height: 17vw;
+    margin-bottom: 1vw;
+    border: 8px solid;
+    border-image: url('../assets/songborder.svg') 2 round;
+}
+
+.small {
+    font-size: calc(1rem + 1vw);
+}

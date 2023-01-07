@@ -1,0 +1,62 @@
+.game-button {
+    position: fixed;
+    top: 1vw;
+    right: 1vw;
+}
+#game-container {
+    overflow: hidden;
+}
+
+#game-play {
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    overflow: hidden;
+    height: 100vh;
+}
+
+.square {
+    background-color:#3E7854;
+    width: 4vw;
+    height: 4vw;
+    box-sizing: border-box;
+    border: solid 1px #47855f;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.person {
+    background-image: url('../assets/girl.svg');
+}
+
+.grass {
+    background-image: url('../assets/grass.svg');
+}
+
+.rock1 {
+    background-image: url('../assets/rock1.png');
+}
+
+/* .game-img {
+    image-rendering: pixelated;
+    height:100%;
+    width:100%;
+} */
+
+/* #game-frame {
+    background-color: red;
+} */
+
+/* #game-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#game-canvas:focus {
+    outline: none;
+} */

@@ -1,0 +1,22 @@
+.nongame-container {
+    background-color: #3C2A2A;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.nongame-frame {
+    background-color: #FFB480;
+    margin: 5vw;
+    padding: 6vw 3vw;
+    text-align: center;
+    width: 100%;
+
+    border: 3vw solid;
+    border-image: url('../assets/paper2.svg') 45 round;
+    background-clip: padding-box;
+}
+
+.nongame-text {
+    font-size: calc(1rem + 1.5vw);
+}

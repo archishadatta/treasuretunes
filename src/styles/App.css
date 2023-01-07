@@ -1,0 +1,83 @@
+/* button */
+button {
+    background-color: transparent;
+    border: none;
+}
+button:hover {
+    cursor: pointer;
+}
+
+.button {
+    text-decoration: none;
+    color: #3B2A2A;
+    padding: .6vw 3vw 1.4vw 3vw;
+    background-image: url('../assets/normal.svg');
+    background-size: 100% 100%;
+}
+
+.wide {
+    padding: .75vw 5vw 1.25vw 5vw; 
+}
+
+.button-text {
+    font-size: calc(1rem + 1vw);
+    font-family: "VT323", 'Courier New', Courier, monospace;
+}
+
+.animated {
+    animation: movement 1s step-start infinite;
+}
+
+@keyframes movement {
+    50% {
+        background-image: url('../assets/hover.svg');
+    }
+}
+
+.animated-text {
+    animation: movement-text 1s step-start infinite;
+}
+
+@keyframes movement-text {
+    50% {
+        position: relative;
+        top: 0.2vw;
+    }
+}
+
+.button:active {
+    background-image: url('../assets/active.svg');
+}
+
+.button:active .button-text {
+    position: relative;
+    top: 0.45vw;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 1vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #CC613D;
+    border: 0.25vw solid;
+    background-clip: padding-box;
+    border-image: url('../assets/songborder.svg') 2 round; 
+    padding: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #3C2A2A; 
+    
+    border: 2px solid;
+    background-clip: padding-box;
+    border-image: url('../assets/songborder2.svg') 2 round; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #322121; 
+    background-clip: padding-box;
+}

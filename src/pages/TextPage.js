@@ -6,7 +6,7 @@ import '../styles/nongame.css'
 import '../styles/App.css';
 
 
-function Intro(props) {
+function TextPage(props) {
 
     function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
@@ -29,9 +29,15 @@ const [showBtn, setShowBtn] = useState(false)
         {showBtn && 
         <div>
             <br></br>
-            <Link to='/game' className="nongame-text button wide animated">
-                <span className='animated-text'>{props.buttonText}</span>
-            </Link>
+            {props.buttonText == 'Start' ?
+              <Link to='/game' className="nongame-text button wide animated">
+              <span className='animated-text'>{props.buttonText}</span>
+              </Link>
+             :
+              <a href={props.url} className="nongame-text button wide animated">
+                  <span className='animated-text'>{props.buttonText}</span>
+              </a>
+            }
         </div>}
         </div> 
     </div>
@@ -40,4 +46,4 @@ const [showBtn, setShowBtn] = useState(false)
   );
 }
 
-export default Intro;
+export default TextPage;

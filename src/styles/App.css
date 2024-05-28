@@ -2,6 +2,8 @@
 button {
     background-color: transparent;
     border: none;
+    margin: 0;
+    padding: 0;
 }
 button:hover {
     cursor: pointer;
@@ -15,6 +17,9 @@ button:hover {
     background-size: 100% 100%;
 }
 
+.button:focus {
+    outline: none;
+}
 .wide {
     padding: .75vw 5vw 1.25vw 5vw; 
 }

@@ -9,7 +9,9 @@
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "react-typed": "^1.2.0",
-    "react-typewriter-effect": "^1.1.0"
+    "react-typewriter-effect": "^1.1.0",
+    "uifx": "^2.0.7",
+    "use-sound": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

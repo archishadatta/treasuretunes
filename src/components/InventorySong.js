@@ -1,16 +1,19 @@
 import React from 'react';
 
-import { Link } from "react-router-dom";
-
 import clock from "../assets/clock.svg"
-
+import mystery from "../assets/mystery.svg"
 
 import '../styles/App.css'
 import '../styles/Inventory.css'
 
 
 function InventorySong(props) {
-
+  if(props.song == null) {
+    return <div className='song-container'>
+    <div>{props.index + 1}.</div>
+    <img className='song-img' src={mystery}></img>
+  </div>
+  }
   return (
     <div className='song-container'>
       <div>{props.index + 1}.</div>

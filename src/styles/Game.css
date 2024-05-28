@@ -19,27 +19,112 @@
     width: 4vw;
     height: 4vw;
     box-sizing: border-box;
-    border: solid 1px #47855f;
+    /* border: solid 1px #47855f; */
+    background-image: url('../assets/green.svg');
 
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.person {
-    background-image: url('../assets/girl.svg');
+.person, .grassperson, .chestperson {
+    background-image: url('../assets/girl-idle.gif'), url('../assets/green.svg');
+}
+
+.person.forward, .grassperson.forward, .chestperson.forward {
+    background-image: url('../assets/girl-forward.gif'), url('../assets/green.svg');
 }
 
 .grass {
-    background-image: url('../assets/grass.svg');
+    background-image: url('../assets/grass.png'), url('../assets/green.svg');
+    /* border: solid #3E7854 1.25vw;
+    outline: solid 1.5px #47855f; */
+
 }
 
 .rock1 {
-    background-image: url('../assets/rock1.png');
+    background-image: url('../assets/rock1.png'), url('../assets/green.svg');
+}
+
+.rock2 {
+    background-image: url('../assets/rock2.png'), url('../assets/green.svg');
+}
+.bush1 {
+    background-image: url('../assets/bush1.png'), url('../assets/green.svg');
+}
+
+.bush2 {
+    background-image: url('../assets/bush2.png'), url('../assets/green.svg');
+}
+
+.chest {
+    background-image: url('../assets/chest2.gif'), url('../assets/green.svg');
+}
+
+/* big tree */
+.square.bigtree1 {
+    background-image: url('../assets/tree0.png'), url('../assets/green.svg');
+    background-position: top left;
+    border-right: none;
+    border-bottom: none;
+}
+.square.bigtree2 {
+    background-image: url('../assets/tree1.png'), url('../assets/green.svg');
+    background-position: bottom left;
+    border-left: none;
+    border-bottom: none;
+}
+.square.bigtree3 {
+    background-image: url('../assets/tree2.png'), url('../assets/green.svg');
+    background-position: right;
+    border-top: none;
+    border-right:none;
+    border-bottom: none;
+}
+.square.bigtree4 {
+    background-image: url('../assets/tree3.png'), url('../assets/green.svg');
+    background-position: left;
+    border-top: none;
+    border-left:none;
+    border-bottom: none;
+}
+.square.bigtree5 {
+    background-image: url('../assets/tree4.png'), url('../assets/green.svg');
+    background-position: top right;
+    border-top: none;
+    border-right:none;
+}
+.square.bigtree6 {
+    background-image: url('../assets/tree5.png'), url('../assets/green.svg');
+    background-position: top left;
+    border-top: none;
+    border-left:none;
+}
+
+/* bigrock */
+.square.bigrock1 {
+    background-image: url('../assets/bigrock1.png'), url('../assets/green.svg');
+    border-bottom: none;
+    border-right:none;
+}
+.square.bigrock2 {
+    background-image: url('../assets/bigrock2.png'), url('../assets/green.svg');
+    border-bottom: none;
+    border-left:none;
+}
+.square.bigrock3 {
+    background-image: url('../assets/bigrock3.png'), url('../assets/green.svg');
+    border-top: none;
+    border-right:none;
+}
+.square.bigrock4 {
+    background-image: url('../assets/bigrock4.png'), url('../assets/green.svg');
+    border-top: none;
+    border-left:none;
 }
 
 /* .game-img {

@@ -7,22 +7,23 @@ import {
   Routes,
 } from 'react-router-dom';
 
-import Intro from './pages/Intro'
-import Game from './pages/Game'
+import TextPage from './pages/TextPage'
 import Game2 from './pages/Game2'
-import End from './pages/End'
 
 
 
 function App() {
 
+  const url = 'https://open.spotify.com/playlist/78sqF0EkkevvyhCG1oD3kQ?si=13b27f152ff64170'
+  
+
   return (
     <div className="App">
        <Router>
           <Routes>
-            <Route path="/" element={<Intro fullText="Hi Eva! Your girlfriend, Archie, made you a playlist of all the songs that remind her of you. Unfortunately, there was a storm last night and your songs were scattered all across Tunelandia. You must search the island to complete your playlist. Good luck!" buttonText="Start"/>}> </Route>
+            <Route path="/" element={<TextPage fullText="Hi Eva! Your girlfriend, Archie, made you a playlist of all the songs that remind her of you. Unfortunately, there was a storm last night and your songs were scattered all across Tunelandia. You must search the island to complete your playlist. Good luck!" buttonText="Start"/>}> </Route>
             <Route path="/game" element={<Game2 />}> </Route>
-            <Route path="/end" element={<Intro fullText="Congratulations! You have journeyed across Tunelandia and collected all your songs. Great work, explorer." buttonText="View Playlist"/>}> </Route>
+            <Route path="/end" element={<TextPage fullText="Congratulations! You have journeyed across Tunelandia and collected all your songs. Great work, explorer." buttonText="View Playlist" url={url}/>}> </Route>
           </Routes>
     </Router>
     </div>

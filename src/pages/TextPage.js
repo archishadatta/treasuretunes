@@ -1,5 +1,5 @@
-import {React, useState, useEffect} from 'react';
-import { Link } from "react-router-dom";
+import {React, useState} from 'react';
+import { Link, useSearchParams } from "react-router-dom";
 import Typed from 'react-typed';
 
 import '../styles/nongame.css'
@@ -13,14 +13,16 @@ function TextPage(props) {
       }
 
 const [showBtn, setShowBtn] = useState(false)
+const [searchParams] = useSearchParams();
+const to = searchParams.get("to");
+const from = searchParams.get("from");
 
   return (
     <div className='nongame-container'>
        <div className='nongame-frame'>
-        {/* <p className="nongame-text">{props.fullText}</p> */}
         <Typed
             startDelay={2000}
-            strings={[props.fullText]}
+            strings={[`Hi ${to}! ${from} made you a playlist for you. Unfortunately, there was a storm last night and your songs were scattered all across Tunelandia. You must search the island to complete your playlist. Good luck!`]}
             style={{fontSize: "calc(1rem + 1.5vw)"}}
             typeSpeed={130}
             onComplete={() => {delay(2000).then(() => setShowBtn(true));}}
@@ -29,15 +31,10 @@ const [showBtn, setShowBtn] = useState(false)
         {showBtn && 
         <div>
             <br></br>
-            {props.buttonText == 'Start' ?
-              <Link to='/game' className="nongame-text button wide animated">
-              <span className='animated-text'>{props.buttonText}</span>
+              <Link to={`/game?playlist=${searchParams.get("playlist")}`} className="nongame-text button wide animated">
+              <span className='animated-text'>{"Start"}</span>
               </Link>
-             :
-              <a href={props.url} className="nongame-text button wide animated">
-                  <span className='animated-text'>{props.buttonText}</span>
-              </a>
-            }
+             
         </div>}
         </div> 
     </div>

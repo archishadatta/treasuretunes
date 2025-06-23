@@ -28,8 +28,11 @@ const [showBtn, setShowBtn] = useState(false)
         {showBtn && 
         <div>
             <br></br>
-            <Link to='/game' className="nongame-text button wide animated">
-                <span className='animated-text'>{props.buttonText}</span>
+            <a href={props.url} className="nongame-text button wide animated" style={{"marginRight": "1rem"}}>
+                  <span className='animated-text'>View Playlist</span>
+              </a>
+            <Link to='/' className="nongame-text button wide animated">
+                <span className='animated-text'>Create a Quest</span>
             </Link>
         </div>}
         </div> 

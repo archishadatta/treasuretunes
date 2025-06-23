@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React} from 'react';
 import './styles/App.css';
 
 import {
@@ -9,6 +9,9 @@ import {
 
 import TextPage from './pages/TextPage'
 import Game2 from './pages/Game2'
+import Create from './pages/Create'
+import End from './pages/End'
+
 
 
 
@@ -21,9 +24,10 @@ function App() {
     <div className="App">
        <Router>
           <Routes>
-            <Route path="/" element={<TextPage fullText="Hi Eva! Your girlfriend, Archie, made you a playlist of all the songs that remind her of you. Unfortunately, there was a storm last night and your songs were scattered all across Tunelandia. You must search the island to complete your playlist. Good luck!" buttonText="Start"/>}> </Route>
+            <Route path="/intro" element={<TextPage/>}> </Route>
             <Route path="/game" element={<Game2 />}> </Route>
-            <Route path="/end" element={<TextPage fullText="Congratulations! You have journeyed across Tunelandia and collected all your songs. Great work, explorer." buttonText="View Playlist" url={url}/>}> </Route>
+            <Route path="/" element={<Create />}> </Route>
+            <Route path="/end" element={<End fullText="Congratulations! You have journeyed across Tunelandia and collected all your songs. Great work, explorer." url={url}/>}> </Route>
           </Routes>
     </Router>
     </div>

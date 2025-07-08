@@ -9,8 +9,7 @@ CORS(app)
 SPOTIFY_API_BASE = "https://api.spotify.com/v1"
 
 # Spotify API credentials
-SPOTIFY_CLIENT_ID = "9b5294211a1241449a9d0829d4c1507e"
-SPOTIFY_CLIENT_SECRET = "190a9d2d5b6547489d4de887db882c5a"
+
 
 def get_access_token():
     auth_url = "https://accounts.spotify.com/api/token"

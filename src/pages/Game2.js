@@ -85,9 +85,9 @@ function Game() {
   const handlePausePreview = () => {
     if (audioRef.current && !audioRef.current.paused) {
      audioRef.current.pause();
-    audioRef.current.src = '';
+    //audioRef.current.src = '';
     console.log('cleanup')
-    audioRef.current.load();
+    //audioRef.current.load();
       setIsPlaying(false);
     }
   };
@@ -100,11 +100,20 @@ function Game() {
   }, [inventoryShow, songShow]);
 
   // Play preview when song modal opens and currSong changes
+  // useEffect(() => {
+  //   if (songShow && currSong >= 0 && songs[currSong]?.previewUrl) {
+  //     handlePlayPreview(songs[currSong].previewUrl);
+  //   }
+  // }, [songShow, currSong]);
+
   useEffect(() => {
-    if (songShow && currSong >= 0 && songs[currSong]?.previewUrl) {
-      handlePlayPreview(songs[currSong].previewUrl);
-    }
-  }, [songShow, currSong]);
+  const audio = audioRef.current;
+  if (audio) {
+    audio.addEventListener('ended', () => {
+      setIsPlaying(false);
+    });
+  }
+}, [audioRef]);
 
   const ding = new UIfx(
     collect,
@@ -471,7 +480,7 @@ function Game() {
   onPause={handlePausePreview}
 />
 
-              <Link to='/end' className="button">
+              <Link to='/end' className="button" onClick={handlePausePreview}>
                 <span className='button-text'>Complete Journey</span>
               </Link>
             </div>

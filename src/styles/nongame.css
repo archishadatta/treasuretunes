@@ -13,8 +13,8 @@
     width: 100%;
 
     border: 3vw solid;
-    border-image: url('../assets/paper2.svg') 45 round;
-    background-clip: padding-box;
+    border-image: url('../assets/paper3.svg') 45 round;
+    /* background-clip: padding-box; */
 }
 
 .nongame-text {

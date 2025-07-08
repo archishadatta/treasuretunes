@@ -22,9 +22,9 @@ const from = searchParams.get("from");
        <div className='nongame-frame'>
         <Typed
             startDelay={2000}
-            strings={[`Hi ${to}! ${from} made you a playlist for you. Unfortunately, there was a storm last night and your songs were scattered all across Tunelandia. You must search the island to complete your playlist. Good luck!`]}
+            strings={[`Hi ${to}! ${from} made you a playlist. Unfortunately, there was a storm last night and your songs were scattered all across Tunelandia. You must search the island to complete your playlist. Good luck!`]}
             style={{fontSize: "calc(1rem + 1.5vw)"}}
-            typeSpeed={130}
+            typeSpeed={200}
             onComplete={() => {delay(2000).then(() => setShowBtn(true));}}
         />
         

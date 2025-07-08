@@ -21,7 +21,7 @@ const [showBtn, setShowBtn] = useState(false)
             startDelay={2000}
             strings={[props.fullText]}
             style={{fontSize: "calc(1rem + 1.5vw)"}}
-            typeSpeed={130}
+            typeSpeed={200}
             onComplete={() => {delay(2000).then(() => setShowBtn(true));}}
         />
         

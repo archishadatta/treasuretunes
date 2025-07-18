@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/treasuretunes/static/css/main.f12dae7a.css",
-    "main.js": "/treasuretunes/static/js/main.88486d9d.js",
+    "main.js": "/treasuretunes/static/js/main.bc4f6d59.js",
     "static/media/background.mp3": "/treasuretunes/static/media/background.878c15448bb864fab92b.mp3",
     "static/media/active.svg": "/treasuretunes/static/media/active.0b34e52dbe0d9ba70f41.svg",
     "static/media/normal.svg": "/treasuretunes/static/media/normal.402341a4d6716c3335dc.svg",
@@ -16,10 +16,10 @@
     "static/media/songborder2.svg": "/treasuretunes/static/media/songborder2.6c70502f3529d04ddba8.svg",
     "static/media/green.svg": "/treasuretunes/static/media/green.1548a3eaa85820d12858.svg",
     "main.f12dae7a.css.map": "/treasuretunes/static/css/main.f12dae7a.css.map",
-    "main.88486d9d.js.map": "/treasuretunes/static/js/main.88486d9d.js.map"
+    "main.bc4f6d59.js.map": "/treasuretunes/static/js/main.bc4f6d59.js.map"
   },
   "entrypoints": [
     "static/css/main.f12dae7a.css",
-    "static/js/main.88486d9d.js"
+    "static/js/main.bc4f6d59.js"
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/treasuretunes/static/css/main.f12dae7a.css",
+    "main.js": "/treasuretunes/static/js/main.88486d9d.js",
+    "static/media/background.mp3": "/treasuretunes/static/media/background.878c15448bb864fab92b.mp3",
+    "static/media/active.svg": "/treasuretunes/static/media/active.0b34e52dbe0d9ba70f41.svg",
+    "static/media/normal.svg": "/treasuretunes/static/media/normal.402341a4d6716c3335dc.svg",
+    "static/media/hover.svg": "/treasuretunes/static/media/hover.53422cfc39ea6767ccea.svg",
+    "static/media/collect.mp3": "/treasuretunes/static/media/collect.2e8b14a1db43d308ce42.mp3",
+    "static/media/paper2.svg": "/treasuretunes/static/media/paper2.ee60fd0e060271e7eb38.svg",
+    "static/media/paper3.svg": "/treasuretunes/static/media/paper3.1b3698a8e277235c8248.svg",
+    "static/media/mystery.svg": "/treasuretunes/static/media/mystery.308ebd4ea2023c77bfa83740559bc9f9.svg",
+    "static/media/clock.svg": "/treasuretunes/static/media/clock.86baf4f9c9015bdb96b86e27c67d781a.svg",
+    "index.html": "/treasuretunes/index.html",
+    "static/media/songborder.svg": "/treasuretunes/static/media/songborder.ca6f1b45ded008693720.svg",
+    "static/media/songborder2.svg": "/treasuretunes/static/media/songborder2.6c70502f3529d04ddba8.svg",
+    "static/media/green.svg": "/treasuretunes/static/media/green.1548a3eaa85820d12858.svg",
+    "main.f12dae7a.css.map": "/treasuretunes/static/css/main.f12dae7a.css.map",
+    "main.88486d9d.js.map": "/treasuretunes/static/js/main.88486d9d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f12dae7a.css",
+    "static/js/main.88486d9d.js"
+  ]
+}

@@ -22,7 +22,7 @@ function Create() {
                 alert('To and From fields must be less than 200 characters each');
                 return;
             }
-            const link = `${window.location.origin}/intro?playlist=${id}&to=${toEncoded}&from=${fromEncoded}`;
+            const link = `${window.location.origin}/treasuretunes/intro?playlist=${id}&to=${toEncoded}&from=${fromEncoded}`;
             setGameLink(link);
             navigator.clipboard.writeText(link).then(() => {
                 alert('Game link copied to clipboard!');

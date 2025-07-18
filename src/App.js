@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-       <Router>
+       <Router basename="/treasuretunes">
           <Routes>
             <Route path="/intro" element={<TextPage/>}> </Route>
             <Route path="/game" element={<Game2 />}> </Route>

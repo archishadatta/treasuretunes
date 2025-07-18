@@ -26,6 +26,8 @@ import AudioPlayer from '../components/AudioPlayer';
 
 function Game() {
 
+  const api = process.env.REACT_APP_API_URL;
+
   const [x, setX] = useState(12);
   const latestX = useRef(x)
 
@@ -137,7 +139,7 @@ function Game() {
   useEffect(() => {
       if (playlistId) {
           console.log("Fetching tracks for playlist:", playlistId);
-          fetch(`http://localhost:5000/api/playlist?playlist_id=${playlistId}`)
+          fetch(`${api}/api/playlist?playlist_id=${playlistId}`)
       .then(response => response.json())
       .then(async data => {
         const songs = await Promise.all(
@@ -149,7 +151,7 @@ function Game() {
             let previewUrl = null;
             try {
               const previewRes = await fetch(
-                `http://localhost:5000/api/preview?title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}`
+                `${api}/api/preview?title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}`
               );
               const previewData = await previewRes.json();
               previewUrl = previewData.previewUrl;

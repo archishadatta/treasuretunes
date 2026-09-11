@@ -2,7 +2,7 @@ import {React} from 'react';
 import './styles/App.css';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
 } from 'react-router-dom';
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-       <Router basename="/treasuretunes">
+       <Router>
           <Routes>
             <Route path="/intro" element={<TextPage/>}> </Route>
             <Route path="/game" element={<Game2 />}> </Route>

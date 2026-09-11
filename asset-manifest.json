@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/treasuretunes/static/css/main.934a4d18.css",
-    "main.js": "/treasuretunes/static/js/main.9781bc9c.js",
+    "main.css": "/treasuretunes/static/css/main.767e86f0.css",
+    "main.js": "/treasuretunes/static/js/main.351013f6.js",
     "static/media/background.mp3": "/treasuretunes/static/media/background.878c15448bb864fab92b.mp3",
     "static/media/active.svg": "/treasuretunes/static/media/active.8220e47b90abbb257e8b.svg",
     "static/media/normal.svg": "/treasuretunes/static/media/normal.129f54a3fd4e53286141.svg",
@@ -15,11 +15,11 @@
     "static/media/songborder.svg": "/treasuretunes/static/media/songborder.13dba71696c0f087be1b.svg",
     "static/media/songborder2.svg": "/treasuretunes/static/media/songborder2.60b18c13b8f45a12d829.svg",
     "static/media/green.svg": "/treasuretunes/static/media/green.847b17d1f3fdac3c81d2.svg",
-    "main.934a4d18.css.map": "/treasuretunes/static/css/main.934a4d18.css.map",
-    "main.9781bc9c.js.map": "/treasuretunes/static/js/main.9781bc9c.js.map"
+    "main.767e86f0.css.map": "/treasuretunes/static/css/main.767e86f0.css.map",
+    "main.351013f6.js.map": "/treasuretunes/static/js/main.351013f6.js.map"
   },
   "entrypoints": [
-    "static/css/main.934a4d18.css",
-    "static/js/main.9781bc9c.js"
+    "static/css/main.767e86f0.css",
+    "static/js/main.351013f6.js"
   ]
 }

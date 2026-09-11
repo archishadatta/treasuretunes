@@ -16,17 +16,17 @@ import bg from '../assets/sounds/background.mp3'
 import '../styles/App.css'
 import '../styles/Game.css'
 import '../styles/Inventory.css'
+import '../styles/nongame.css'
 
 
 import Modal from 'react-modal';
 import InventorySong from '../components/InventorySong';
 import AudioPlayer from '../components/AudioPlayer';
+import { loadPlaylist } from '../utils/playlistLoader';
 
 
 
 function Game() {
-
-  const api = process.env.REACT_APP_API_URL;
 
   const [x, setX] = useState(12);
   const latestX = useRef(x)
@@ -41,14 +41,8 @@ function Game() {
   const [modalOpen, setModalOpen] = useState('false')
   const latestModalOpen = useRef(modalOpen)
 
-  const [songs, setSongs] = useState([
-    {
-      url: 'https://upload.wikimedia.org/wikipedia/en/a/a0/Hozier_-_Hozier.png',
-      title: 'Song 1',
-      artist: 'Hozier',
-      duration: '3:28'
-    },
-  ])
+  const [songs, setSongs] = useState(null);
+  const [loadFailed, setLoadFailed] = useState(false);
  const [inventoryShow, setInventoryShow] = useState(false);
   const [songShow, setSongShow] = useState(false);
   const [currSong, setCurrSong] = useState(-1);
@@ -137,43 +131,17 @@ function Game() {
   const playlistId = searchParams.get("playlist");
 
   useEffect(() => {
-      if (playlistId) {
-          console.log("Fetching tracks for playlist:", playlistId);
-          fetch(`${api}/api/playlist?playlist_id=${playlistId}`)
-      .then(response => response.json())
-      .then(async data => {
-        const songs = await Promise.all(
-          data.items.map(async item => {
-            const title = item.track.name;
-            const artist = item.track.artists[0].name;
-            const durationMs = item.track.duration_ms;
-
-            let previewUrl = null;
-            try {
-              const previewRes = await fetch(
-                `${api}/api/preview?title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}`
-              );
-              const previewData = await previewRes.json();
-              previewUrl = previewData.previewUrl;
-            } catch (err) {
-              console.warn(`Preview fetch failed for "${title}" by "${artist}":`, err);
-            }
-
-            return {
-              url: item.track.album.images[0]?.url || '',
-              title,
-              artist,
-              duration: `${Math.floor(durationMs / 60000)}:${String(Math.floor((durationMs % 60000) / 1000)).padStart(2, '0')}`,
-              previewUrl
-            };
-          })
-        );
-
-        console.log("Final songs with previews:", songs);
-        setSongs(songs);
-      })
-      .catch(err => console.error("Error fetching tracks:", err));
-  }
+    if (!playlistId) return;
+    let cancelled = false;
+    // Reuses the fetch already kicked off on the intro screen, so this
+    // usually resolves immediately instead of waiting on the network.
+    loadPlaylist(playlistId)
+      .then(songs => { if (!cancelled) setSongs(songs); })
+      .catch(err => {
+        console.error("Error fetching tracks:", err);
+        if (!cancelled) setLoadFailed(true);
+      });
+    return () => { cancelled = true; };
   }, [playlistId]);
 
 
@@ -377,17 +345,45 @@ function Game() {
   }
 
   useEffect(() => {
+      if (!songs) return;
       draw();
       window.addEventListener("keydown", keyPressed);
       window.addEventListener("keyup", keyUp);
       // window.addEventListener('resize', setY(getPlayerPos()), false);
-  }, []);
+      return () => {
+        window.removeEventListener("keydown", keyPressed);
+        window.removeEventListener("keyup", keyUp);
+      };
+  }, [songs]);
 
   // window.addEventListener('resize', setY(getPlayerPos()), false);
   // window.addEventListener("keydown", keyPress);
   // window.addEventListener('orientationchange', resizeGame, false);
 
   // background.play()
+
+  if (loadFailed) {
+    return (
+      <div className='nongame-container'>
+        <div className='nongame-frame'>
+          <div className='nongame-text'>Couldn't load the playlist. Try refreshing the page.</div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!songs) {
+    return (
+      <div className='nongame-container'>
+        <div className='nongame-frame'>
+          <div className='nongame-text loading-text'>
+            <span className='loading-spinner' aria-hidden="true"></span>
+            Loading your playlist...
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div id='game-container'>
